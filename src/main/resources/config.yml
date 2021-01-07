@@ -1,0 +1,7 @@
+mysql:
+  ip: "localhost"
+  port: "3306"
+  user: "root"
+  database: "ffa"
+  table: "combo"
+  password: "password"
