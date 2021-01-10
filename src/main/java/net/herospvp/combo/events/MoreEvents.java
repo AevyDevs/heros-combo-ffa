@@ -91,7 +91,8 @@ public class MoreEvents implements Listener {
         int slot = player.getInventory().getHeldItemSlot();
 
         Bukkit.getScheduler().runTaskLater(Main.getMain(), () -> {
-            if (player.getInventory().getHeldItemSlot() == slot) {
+            if (player.getInventory().getHeldItemSlot() == slot
+                    || player.getInventory().getItem(slot).getAmount() == 64) {
                 return;
             }
             player.getInventory().setItem(slot, itemStack);
