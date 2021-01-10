@@ -76,23 +76,6 @@ public class Main extends JavaPlugin {
 
         Memory.setKit(kit);
 
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                short j = 0;
-                for (ItemStack itemStack : player.getInventory()) {
-                    if (itemStack == null) {
-                        j++;
-                        continue;
-                    }
-                    if (hotBar[1].getType() == itemStack.getType() && itemStack.getAmount() != 64 &&
-                            player.getInventory().getItemInHand().getType() != hotBar[1].getType()) {
-                        itemStack.setAmount(64);
-                        player.getInventory().setItem(j, itemStack);
-                    }
-                    j++;
-                }
-            }
-        }, 1200L, 1200L);
     }
 
     @Override
