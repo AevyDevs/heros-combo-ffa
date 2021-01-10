@@ -33,11 +33,10 @@ public class Main extends JavaPlugin {
 
         new SaveData(18000);
 
-        String[] messages = new String[4];
+        String[] messages = new String[3];
         messages[0] = "&bIP del nostro TeamSpeak: &fts.herospvp.net";
         messages[1] = "&4&lRICORDA! &cIl mouse-abuse non e' consentito!";
-        messages[2] = "&bLink del nostro Discord: &fdiscord.gg/6kNTCUjKBg";
-        messages[3] = "&6Gestisci le tue notifiche con /notifiche";
+        messages[2] = "&6Gestisci le tue notifiche con /notifiche";
 
         new ActionBarAnnouncer(messages, 200, 1200);
         new AlwaysDay("combo_ffa", 9000, 1200);
