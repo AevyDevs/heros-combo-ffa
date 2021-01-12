@@ -8,6 +8,7 @@ import net.herospvp.base_ffa.tasks.ActionBarAnnouncer;
 import net.herospvp.base_ffa.tasks.AlwaysDay;
 import net.herospvp.base_ffa.tasks.SaveData;
 import net.herospvp.combo.events.MoreEvents;
+import net.herospvp.database.Director;
 import net.herospvp.database.Musician;
 import net.herospvp.database.items.Instrument;
 import org.bukkit.Material;
@@ -24,15 +25,17 @@ public class Main extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new MoreEvents(), this);
 
-        Musician musician = new Musician();
-        musician.addInstrument("bass", new Instrument(getStringFromConfig("ip"), getStringFromConfig("port"),
+        Director director = new Director();
+        director.addInstrument("bass", new Instrument(getStringFromConfig("ip"), getStringFromConfig("port"),
                 getStringFromConfig("user"), getStringFromConfig("password"), getStringFromConfig("database"),
                 null, null, true, 1));
+        Memory.setTable("combo");
 
-        Memory.setPlay(new Musician.Play(musician.getInstrument("bass")));
-        Memory.setTable(getStringFromConfig("table"));
-        Memory.getPlay().updateMirror(Memory.init());
-        Memory.getPlay().start();
+        Musician musician = new Musician(director.getInstrument("bass"));
+        Memory.setMusician(musician);
+
+        musician.updateMirror(Memory.init());
+        musician.play();
 
         new SaveData(18000);
 
