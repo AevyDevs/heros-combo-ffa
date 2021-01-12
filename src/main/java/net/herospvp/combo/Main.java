@@ -1,20 +1,17 @@
 package net.herospvp.combo;
 
 import net.herospvp.base_ffa.Memory;
-import net.herospvp.base_ffa.configuration.CombatTagConfiguration;
-import net.herospvp.base_ffa.configuration.DatabaseConfiguration;
 import net.herospvp.base_ffa.configuration.WorldConfiguration;
 import net.herospvp.base_ffa.configuration.kit.Enchants;
 import net.herospvp.base_ffa.configuration.kit.Kit;
-import net.herospvp.base_ffa.configuration.kit.KitConfiguration;
 import net.herospvp.base_ffa.tasks.ActionBarAnnouncer;
 import net.herospvp.base_ffa.tasks.AlwaysDay;
 import net.herospvp.base_ffa.tasks.SaveData;
 import net.herospvp.combo.events.MoreEvents;
-import org.bukkit.Bukkit;
+import net.herospvp.database.Musician;
+import net.herospvp.database.items.Instrument;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -27,9 +24,15 @@ public class Main extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new MoreEvents(), this);
 
-        new DatabaseConfiguration(getStringFromConfig("ip"), getStringFromConfig("port"),
-                getStringFromConfig("user"), getStringFromConfig("database"), getStringFromConfig("table"),
-                getStringFromConfig("password"));
+        Musician musician = new Musician();
+        musician.addInstrument("bass", new Instrument(getStringFromConfig("ip"), getStringFromConfig("port"),
+                getStringFromConfig("user"), getStringFromConfig("password"), getStringFromConfig("database"),
+                null, null, true, 1));
+
+        Memory.setPlay(new Musician.Play(musician.getInstrument("bass")));
+        Memory.setTable(getStringFromConfig("table"));
+        Memory.getPlay().updateMirror(Memory.init());
+        Memory.getPlay().start();
 
         new SaveData(18000);
 
