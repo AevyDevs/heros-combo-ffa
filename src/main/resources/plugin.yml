@@ -1,6 +1,6 @@
 name: ComboFFA
 author: Sorridi
-version: 2.0.0
+version: 2.0.1
 main: net.herospvp.combo.Main
 load: POSTWORLD
 depend:

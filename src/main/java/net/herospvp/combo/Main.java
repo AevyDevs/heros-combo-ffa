@@ -96,7 +96,10 @@ public class Main extends JavaPlugin {
 
         spawn.setSpawnLambda(spawnLambda);
         playerEvents.setSpawnLambda(spawnLambda);
-        combatEvents.setCombatEventsLambda((player, killer) -> killer.getInventory().setArmorContents(armor));
+        combatEvents.setCombatEventsLambda((player, killer) -> {
+            killer.getInventory().setArmorContents(armor);
+            killer.getInventory().addItem(hotBar[1]);
+        });
 
 
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () -> {
