@@ -1,7 +1,0 @@
-name: ComboFFA
-author: Sorridi
-version: 1.0.0
-main: net.herospvp.combo.Main
-load: POSTWORLD
-depend:
-  - BaseFFA
