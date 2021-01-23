@@ -17,6 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class Main extends JavaPlugin {
 
     private Base base;
@@ -98,7 +99,7 @@ public class Main extends JavaPlugin {
         playerEvents.setSpawnLambda(spawnLambda);
         combatEvents.setCombatEventsLambda((player, killer) -> {
             killer.getInventory().setArmorContents(armor);
-            killer.getInventory().addItem(hotBar[1]);
+            killer.getInventory().addItem(new ItemStack(Material.ENDER_PEARL, 4));
         });
 
 

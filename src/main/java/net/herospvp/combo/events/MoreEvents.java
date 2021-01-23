@@ -16,6 +16,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class MoreEvents implements Listener {
 
     private final Main instance;
