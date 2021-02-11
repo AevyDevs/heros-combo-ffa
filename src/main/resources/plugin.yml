@@ -1,6 +1,6 @@
 name: ComboFFA
 author: Sorridi
-version: 2.2.0
+version: ${project.version}
 main: net.herospvp.combo.Main
 depend:
   - BaseFFA
