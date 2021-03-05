@@ -1,6 +1,7 @@
 package net.herospvp.combo.events;
 
 import net.herospvp.base.events.custom.CombatKillEvent;
+import net.herospvp.base.events.custom.SpawnEvent;
 import net.herospvp.combo.Main;
 import net.herospvp.heroscore.HerosCore;
 import net.herospvp.heroscore.objects.HPlayer;
@@ -13,9 +14,11 @@ import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.player.*;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
-import net.herospvp.base.events.custom.SpawnEvent;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;

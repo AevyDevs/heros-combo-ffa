@@ -2,9 +2,6 @@ package net.herospvp.combo;
 
 import lombok.Getter;
 import net.herospvp.base.Base;
-import net.herospvp.base.commands.Spawn;
-import net.herospvp.base.events.CombatEvents;
-import net.herospvp.base.events.PlayerEvents;
 import net.herospvp.combo.events.MoreEvents;
 import net.herospvp.heroscore.HerosCore;
 import org.bukkit.Bukkit;
@@ -12,10 +9,7 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 @Getter
 @SuppressWarnings("FieldCanBeLocal")
