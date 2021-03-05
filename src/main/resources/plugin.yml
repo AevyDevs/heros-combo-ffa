@@ -1,6 +1,6 @@
-name: ComboFFA
+name: heros-combo-ffa
 author: Sorridi
 version: ${project.version}
 main: net.herospvp.combo.Main
 depend:
-  - BaseFFA
+  - heros-base-ffa
